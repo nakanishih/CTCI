@@ -34,6 +34,23 @@ void RemoveFromTail(Node *header){
     free(temp);
 }
 
+void AppendToHead(Node *header, int value){
+    Node *swap = MkNode(header->value);
+    swap->next=header->next;
+
+    header->value = value;
+    header->next = swap;
+}
+
+void RemoveFromHead(Node *header){
+    Node *swap = header->next;
+
+    header->value = header->next->value;
+    header->next = header->next->next;
+
+    free(swap);
+}
+
 void PrintList(Node *header){
     printf("List : { ");
     while(header!=NULL){
@@ -70,5 +87,19 @@ int CalcLengthList(Node *header){
         prev = prev->next;
     }
     return counter;
+}
+
+Node* MkListFromAry(int Ary[], int LenAry){
+    Node *N;
+    int i;
+
+    for(i=0;i<LenAry;i++){
+        if(i==0){
+            N = MkNode(Ary[0]);
+        }else{
+            AppendToTail(N,Ary[i]);
+        }
+    }
+    return N;
 }
 

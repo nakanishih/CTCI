@@ -7,6 +7,11 @@ void RemoveElement(Node *header, int value){
     Node *prev = header;
     Node *swap = NULL;
 
+    if(prev->value==value){
+        *header = *prev->next;
+        return;
+    }
+
     while(prev->next!=NULL){
         if(prev->next->value==value){
             swap = prev->next;
@@ -40,6 +45,10 @@ int main(void){
     RemoveElement(N,(int)C );
 
     PrintListChar(N);
+
+    int LenList = CalcLengthList(N);
+
+    printf("%d\n",LenList);
 
     FreeList(N);
     return 0;
