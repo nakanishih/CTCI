@@ -15,6 +15,8 @@ void RemoveFromTail(Node *header);
 
 void PrintList(Node *header);
 
+void PrintListChar(Node *header);
+
 void FreeList(Node *header);
 
 int CalcLengthList(Node *header);

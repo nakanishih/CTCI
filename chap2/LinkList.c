@@ -43,6 +43,15 @@ void PrintList(Node *header){
     printf("}\n");
 }
 
+void PrintListChar(Node *header){
+    printf("List : { ");
+    while(header!=NULL){
+        printf("%c ",header->value);
+        header = header->next;
+    }
+    printf("}\n");
+}
+
 void FreeList(Node *header){
     Node *temp = header;
     Node *swap = NULL;
