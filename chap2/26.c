@@ -10,14 +10,12 @@ int CheckPalindrome(Node *header){
 
     int LenList = CalcLengthList(header);
     int Len1 = LenList/2;
-    int Len2 = LenList-Len1;
     int i,cnt=0;
 
     while(cnt<Len1){
         tmp=tmp->next;
         cnt ++;
     }
-    //printf("%d\n",CalcLengthList(tmp));
 
     while(tmp!=NULL){
         if(tail==NULL){
@@ -27,8 +25,6 @@ int CheckPalindrome(Node *header){
         }
         tmp=tmp->next;
     }
-
-    //PrintListChar(tail);
 
     while(tail!=NULL){
         if(tail->value!=head->value) return 0;
