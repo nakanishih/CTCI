@@ -71,11 +71,13 @@ void PrintListChar(Node *header){
 
 void FreeList(Node *header){
     Node *temp = header;
+    Node *temp2;
     Node *swap = NULL;
-    while(temp!=NULL){
-        swap = temp->next;
+    while(temp2!=NULL){
+        swap = temp2->next;
         free(temp);
-        temp = swap;
+        temp = NULL;
+        temp2 = temp = swap;
     }
 }
 
