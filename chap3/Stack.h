@@ -5,14 +5,27 @@
 #define SUCCESS     1
 #define FAILURE     0
 
-typedef Node Stack;
+struct Stack_{
+    struct Stack_ *next;
+    int value;
+    int id;
+};
+typedef struct Stack_ Stack;
 
-int push(Node *tail, int value);
+Stack* StackInit();
 
-int pop(Node *tail);
+int push(Stack *top, int value);
 
-int peek(Node *tail);
+int pop(Stack *top);
 
-int isEmpty(Node *tail);
+int peek(Stack *top);
+
+int isEmpty(Stack *top);
+
+void FreeStack(Stack *top);
+
+void PrintStack(Stack *top);
+
+void PrintStackChar(Stack *top);
 
 #endif
