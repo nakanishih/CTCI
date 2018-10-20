@@ -1,0 +1,24 @@
+#ifndef HASHTABLE_H
+#define HASHTABLE_H
+
+#define SIZE 20
+#define CHARSIZE 10
+
+struct DataItem {
+   char* data[CHARSIZE];
+   int key;
+};
+
+struct DataItem* hashArray[SIZE]; 
+struct DataItem* dummyItem;
+struct DataItem* item;
+
+int hashCode(int key);
+struct DataItem *search(int key);
+void insert(int key,char* data);
+struct DataItem* delete(struct DataItem* item);
+void display();
+
+void insertChar(struct DataItem* item, char* Element);
+
+#endif
